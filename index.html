@@ -20,6 +20,15 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		
+		
+		
+		<style>
+			.red-div {
+				background-color: red;
+				border: green 5px dotted !important;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -43,10 +52,23 @@
 					</p>
 				</section>
 				<section data-background="">
-					<h2>Wild Wild West</h2>					
+					<h2>Wild Wild West</h2>
 				</section>
 				<section>
 					<h2>Inspect those Elements</h2>
+					<blockquote>Use the source Luke...</blockquote>
+				</section>
+				<section>
+					<div style="margin-top: -300px;" class="red-div">
+						<label for="FirstName">First Name</label>
+						<input type="text" id="FirstName">
+						<label for="LastName">Last Name</label>
+						<input type="text" id="LastName">
+						<img src="////img/cat.jpg" alt="" title="...the one who will bring balance to the Force." />						
+					</div>
+					<div>
+						<button id="quoteButton">Click Me!</button>
+					</div>
 				</section>
 				<section>
 					<h2>Page Whisperer</h2>
@@ -71,6 +93,7 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
@@ -84,6 +107,16 @@
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
+			});
+			
+			function displayQuote() {
+				$.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
+					alert(a[0].content + "<p>&mdash; " + a[0].title + "</p>");
+				});
+			}
+			
+			$(function() {
+				$("#quoteButton").click(displayQuote);
 			});
 		</script>
 	</body>
