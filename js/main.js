@@ -1,5 +1,6 @@
 $(function() {
     $("#quoteButton").click(displayQuote);
+    $("#countdownButton").click(startCountDown);
 });
 
 function justLogIt() {
@@ -24,13 +25,40 @@ function createTable(numberOfRows) {
     
     $("#movies tbody").html("");
 
-    while(numberOfRows) {
+    while(numberOfRows--) {
         var movie = movies[numberOfRows % totalMovies];
         $("#movies tbody").append('<tr><td>' + movie.title + '</td><td>' + movie.year + '</td></tr>');
-        numberOfRows--;
     }
 }
 
 function gotError() {
     var y = x * x;
 }
+
+var timer;
+
+function startCountDown() {
+    var numberOfSeconds = getNumberOfSeconds();
+    
+    if (timer) {
+        clearInterval(timer);
+    }
+    
+    timer = setInterval(function() {
+        $("#countDownSeconds").text(numberOfSeconds--);
+        
+        if(numberOfSeconds < 0){
+            clearInterval(timer);
+        }
+    }, 1000);
+}
+
+function getNumberOfSeconds () {
+    return getRandomInt(10, 20);
+}
+
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+

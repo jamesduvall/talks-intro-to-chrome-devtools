@@ -1,3 +1,11 @@
+.myInfo img {
+    border-radius: 50%;
+    border: 1px white solid !important;
+    width: 75px;
+    height: 75px;
+    vertical-align:middle;
+}
+
 .red-div {
     background-color: red;
     border: green 5px dotted !important;
