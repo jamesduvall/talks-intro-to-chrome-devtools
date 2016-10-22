@@ -28,6 +28,9 @@
 				background-color: red;
 				border: green 5px dotted !important;
 			}
+			.red-div label:hover {
+				font-size: 7em;
+			}
 		</style>
 	</head>
 	<body>
@@ -110,9 +113,17 @@
 			});
 			
 			function displayQuote() {
-				$.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
-					alert(a[0].content + "<p>&mdash; " + a[0].title + "</p>");
-				});
+				var starWarsQuotes = ['It\'s a trap!', 
+					'Do. Or do not. There is no try.', 
+					'I find your lack of faith disturbing.', 
+					'I\'ve got a bad feeling about this.', 
+					'Never tell me the odds.',
+					'Stay on target.'];
+				alert(starWarsQuotes[getRandomInt(0, starWarsQuotes.length - 1)]);				
+			}
+
+			function getRandomInt(min, max) {
+				return Math.floor(Math.random() * (max - min + 1)) + min;
 			}
 			
 			$(function() {
