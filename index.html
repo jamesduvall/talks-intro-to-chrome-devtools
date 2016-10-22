@@ -96,6 +96,7 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="js/starwars.js"></script>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
 		<script>
@@ -111,20 +112,6 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
-			
-			function displayQuote() {
-				var starWarsQuotes = ['It\'s a trap!', 
-					'Do. Or do not. There is no try.', 
-					'I find your lack of faith disturbing.', 
-					'I\'ve got a bad feeling about this.', 
-					'Never tell me the odds.',
-					'Stay on target.'];
-				alert(starWarsQuotes[getRandomInt(0, starWarsQuotes.length - 1)]);				
-			}
-
-			function getRandomInt(min, max) {
-				return Math.floor(Math.random() * (max - min + 1)) + min;
-			}
 			
 			$(function() {
 				$("#quoteButton").click(displayQuote);
