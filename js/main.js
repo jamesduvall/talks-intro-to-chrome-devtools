@@ -1,6 +1,7 @@
 $(function() {
     $("#quoteButton").click(displayQuote);
     $("#countdownButton").click(startCountDown);
+    $("#searchButton").click(getBook);
 });
 
 function justLogIt() {
@@ -62,3 +63,12 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function getBook() {
+    var searchText = $('#searchText').val().replace(/ /g, '+')
+
+    if (searchText) {
+        $.getJSON("https://www.googleapis.com/books/v1/volumes?q=" + searchText + "&key=AIzaSyCKhFM6580-ujXYIz1PZGavqbmZheym-fk", function(data) {
+            console.log(data);
+        });
+    }
+}
