@@ -59,7 +59,6 @@ function getNumberOfSeconds () {
     return getRandomInt(10, 20);
 }
 
-
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -83,3 +82,7 @@ function getBook() {
         });
     }
 }
+
+/* Code Snippets
+
+*/
