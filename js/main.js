@@ -1,0 +1,3 @@
+$(function() {
+    $("#quoteButton").click(displayQuote);
+});
