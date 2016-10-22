@@ -8,6 +8,7 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/sky.css">
+		<link rel="stylesheet" href="css/main.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -20,18 +21,6 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-		
-		
-		
-		<style>
-			.red-div {
-				background-color: red;
-				border: green 5px dotted !important;
-			}
-			.red-div label:hover {
-				font-size: 7em;
-			}
-		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -58,8 +47,13 @@
 					<h2>Wild Wild West</h2>
 				</section>
 				<section>
-					<h2>Inspect those Elements</h2>
+					<h2>Elements</h2>
 					<blockquote>Use the source Luke...</blockquote>
+					<ul>
+						<li>View the markup</li>
+						<li>Prototype</li>
+						<li></li>
+					</ul>
 				</section>
 				<section>
 					<div style="margin-top: -300px;" class="red-div">
@@ -74,16 +68,45 @@
 					</div>
 				</section>
 				<section>
-					<h2>Page Whisperer</h2>
+					<h2>Console</h2>
+					<blockquote></blockquote>
+					<ul>
+						<li>View Errors / Logs</li>
+						<li>Execute JavaScript</li>
+					</ul>
 				</section>
 				<section>
-					<h2>Where My Files At?</h2>
+					<h2>Movies</h2>
+					<table id="movies">
+						<thead><th>Title</th><th>Year</th></thead>
+						<tbody>
+							
+						</tbody>
+					</table>
 				</section>
 				<section>
-					<h2>Looks Good On My Phone</h2>
+					<h2>Sources</h2>
+					<blockquote>Where My Files At?</blockquote>
+					<ul>
+						<li>View source files</li>
+						<li>Debug</li>
+					</ul>
 				</section>
 				<section>
-					<h2>Where Performance Goes To Die</h2>
+					<h2>Device Mode</h2>
+					<blockquote>Looks Good On My Phone</blockquote>
+					<ul>
+						<li>View sites against various device screen sizes</li>
+						<li>Simulate poor Network Conditions</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Network</h2>
+					<blockquote>Where Performance Goes To Die</blockquote>
+					<ul>
+						<li>Inspect Requests</li>
+						<li>Track down bottlenecks</li>
+					</ul>
 				</section>
 				<section>
 					<h2></h2>
