@@ -7,7 +7,7 @@
 		<title>Inspect the Web</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/sky.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
 		<link rel="stylesheet" href="css/main.css">
 
 		<!-- Theme used for syntax highlighting of code -->
@@ -86,6 +86,9 @@
 							
 						</tbody>
 					</table>
+					<div class="fragment">
+						<pre><code>$("#movies tbody tr:even").css("background-color", "#fff");</code>					</pre>
+					</div>
 				</section>
 				<section>
 					<h2>Sources</h2>
@@ -100,6 +103,7 @@
 					<h4 id="countDownSeconds">?</h4>
 					<button id="countdownButton">Start!</button>
 				</section>
+				<section data-background-image="./img/gob.gif"></section>
 				<section>
 					<h2>Device Mode</h2>
 					<blockquote>Looks Good On My Phone</blockquote>
@@ -110,21 +114,24 @@
 				</section>
 				<section>
 					<h2>Network</h2>
-					<blockquote>Where Performance Goes To Die</blockquote>
+					<blockquote><p>Where Performance Goes To Die</p></blockquote>
 					<ul>
 						<li>Inspect Requests</li>
 						<li>Track down bottlenecks</li>
 					</ul>
 				</section>
-				<section>
+				<section id="bookFinderSlide">
+					<h2>Book Finder</h2>
 					<div id="searchForm">
 						<div>
 							<input type="text" id="searchText" placeholder="Enter book title..." />
 							<button id="searchButton">Search</button>
 						</div>
-						<div id="searchResult">
-							
+						<div id="searchResult" style="display: none;">
+							<img id="bookThumbnail" src="" alt="Book Cover Art" />
+							<p id="bookDescription"></p>
 						</div>
+						<div id="noResults" style="display: none;">No results returned.</div>
 					</div>
 				</section>
 				<section>

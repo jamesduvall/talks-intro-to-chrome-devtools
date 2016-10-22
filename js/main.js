@@ -48,8 +48,9 @@ function startCountDown() {
     timer = setInterval(function() {
         $("#countDownSeconds").text(numberOfSeconds--);
         
-        if(numberOfSeconds < 0){
+        if(numberOfSeconds < 0) {            
             clearInterval(timer);
+            Reveal.next();
         }
     }, 1000);
 }
@@ -64,11 +65,21 @@ function getRandomInt(min, max) {
 }
 
 function getBook() {
-    var searchText = $('#searchText').val().replace(/ /g, '+')
+    var searchText = $('#searchText').val().replace(/ /g, '+');
+    $("#searchResult").hide();
+    $("#noResults").hide();
 
     if (searchText) {
         $.getJSON("https://www.googleapis.com/books/v1/volumes?q=" + searchText + "&key=AIzaSyCKhFM6580-ujXYIz1PZGavqbmZheym-fk", function(data) {
-            console.log(data);
+            if (!data || !data.totalItems) {
+                $("#noResults").show();
+            }
+            else {
+                var book = data.items[0].volumeInfo;
+                $("#bookDescription").text(book.description);
+                $("#bookThumbnail").attr("src", book.imageLinks.smallThumbnail);
+                $("#searchResult").show();
+            }
         });
     }
 }
